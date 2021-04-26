@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Blood</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 25vh;
+        }
+
+        h3 {
+            margin-bottom: 5vh;
+
+        }
+        form {
+            margin-bottom: 2vh;
+        }
+        p { 
+            margin-top: 4vh;
+        }
+
+        
+    </style>
+
+
+</head>
+<body>
+<h1>What is the baby's blood type?</h1>
+<h3>Special Serena Code</h3>
+
+<form action="fatherbloodtype" id="fatherbloodfrom"> What is the father's blood type?
+    <select id="fatherbloodtype">
+      <option value = 2 >A</option>
+      <option value = 3 >B</option>
+      <option value = 5>AB</option>
+      <option value = 7>O</option>
+    </select>
+  </form>
+  <form action="father+-" id="stuff"> select:
+    <select id="fatherplus">
+      <option value = 1 >Positive</option>
+      <option value = 2 >Negative</option>
+    </select>
+  </form>
+  
+<form action="motherbloodtype" id="motherbloodfrom"> What is the mother's blood type?
+    <select id="motherbloodtype">
+      <option value = 2 >A</option>
+      <option value = 3 >B</option>
+      <option value = 5>AB</option>
+      <option value = 7>O</option>
+    </select>
+  </form>
+
+  <form action="mother+-" id="stuff"> select:
+    <select id="motherplus">
+      <option value = 1 >Positive</option>
+      <option value = 2 >Negative</option>
+    </select>
+  </form>
+  
+  <input type = "button" class="btn btn-success" value = "Check Out" onclick="go()">
+ <p id = "result"> </p>
+
+<script> // A = 2; B = 3; AB = 5; O = 7; Positive = 1 Negative = 2
+
+   
+    function determinebloodtype(mother, father) {
+        let num = (father*mother)
+        if (num == 4) {return "A or O" }
+        else if (num == 6) {return "Literally everything. A, B, AB or O"}
+        else if (num == 10) {return "A, B, or AB"}
+        else if (num == 14) {return "A or O"}
+        else if (num == 9)  {return "B or O"}
+        else if (num ==15) {return "A, B, or Ab"}
+        else if (num == 21) {return "B or O"}
+        else if (num == 25) {return "A, B, or AB"}
+        else if (num == 35) {return "A or B"}
+        else if (num == 49) {return "O"}
+    }
+
+    function determinenegativepositive(mother, father) {
+        let num = (father*mother)
+        if (num == 4) { return "negative"}
+        else {return "positive or negative"}
+    }
+    
+    
+   function go() {
+       const fathertype = document.querySelector("#fatherbloodtype").value
+       const mothertype =  document.querySelector("#motherbloodtype").value
+       const fatherpos = document.querySelector("#fatherplus").value
+       const motherpos = document.querySelector("#motherplus").value
+       const result = document.getElementById("result")
+    result.innerText = ("The baby's blood type could be " + determinebloodtype(fathertype,mothertype) + " " + determinenegativepositive(fatherpos, motherpos))
+
+   }
+    
+</script>
+
+</body>
+</html>
