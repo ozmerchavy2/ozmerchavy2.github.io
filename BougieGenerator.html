@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stupid Jokes Generator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 25vh;
+            margin-bottom: 10vh;
+        }
+
+        #jokespace {
+            margin-top: 7vh;
+        }
+
+        
+    </style>
+</head>
+<body>
+<h1>בוז'י גנרטור</h1>
+<button class="btn btn-success" onclick="Writejoke()">צור תגובות אוהדות לבוז'י</button>
+<p id = "jokespace"></p>
+
+    <script>
+const jokespace = document.getElementById ('jokespace'); 
+let prince = ["מלך", "אלוף", "אדיר", "חתיך", "גאון", "מקסים", "נהדר", "מסוקס", "גיבור", "שרמנטי", "מהמם", "אלגנטי", "נסיך", "חסון", "כליל חן", "ווינר","גברתן","גבר","אצילי","נסיכול","איתן","מגניב","קוליסטי","חתיך פצצות","שובר ביופיו","בחור מאוד לעניין"]
+let hand = ["ידיים", "עיניים", "שיניים", "רגליים", "צלעות", "גבות","ירכיים","שפתיים","עפעפיים"]
+let pretty = ["יפות", "מהממות", "חזקות", "סקסיות", "מדהימות", "חסונות", "מעלפות","ענוגות", "כחושות","מתוקות","מרהיבות","חלקות","שעירות אבל בקטע טוב"]
+let action = [ "לדרוך על נחש יחף", "ללכת על השטיח עם נעליים", "לקפוץ על טרמפולינה עם גרביים","לאכול ארטיק בלי לקלף את העטיפה מראש", "לאכול בננה הפוך", "לאכול גלידה בלי לטפטף","לנצח את הבחירות עם מסטיק", "לבלוע סוכריה על מקל", "לנצח את איראן בישיבה","לרקוד הורה עם יפנים","לרוץ בבני ברק עם חצאית קצרה","לקרוא תהילים בקוריאנית", "לנצח במחבואים בלי להציץ","לנצח בכדורסל מתנסים", "ללכת לשירותים בלי לנגב את היד במכנסיים", "לא לשכוח יעלה ויבוא","לנצח", "להציל אותנו", "לשמור עלינו", "לכסח ת'עותומאנים", "להעיף תמנדט הבריטי", "לקחת את הבחירות", "לשבור להם תשיניים", "להרוג את סאורון", "לשבור תרעים עם חרב", "לברוא אבן שהוא לא יכול להרים", "לאכול שניצל בלי להשאיר בצלחת", "לנצח את משה דיין בעמידת ידיים", "להאזין לכל מחזור הטבעת של ואגנר","לאסוף פוקימונים בטלפון קווי","ללכת לקולנוע ולהסתיר למי שיושב לפניו","לספור עד אינסוף פעמיים","להיות מוכש על ידי נחש ארסי. הנחש ימות בייסורים אחרי שלושה ימים"]
+let end = ["!", ".", "!!", "...", ".", ",", "!!!", "!", ";"]
+
+function random(array) {
+    return (array[~~(Math.random() * array.length)])
+}
+
+
+function generatecomment() {
+    let form = 0
+   function generate(){
+    form = [("תנו לבוז'י ה" + random(prince) + " " + random(action) + " עם ה" + random(hand) + " ה" + random(pretty) + " שלו"),
+    ("בוז'י ה" + random(prince)),
+    ("בוז'י יכול " + random(action)),
+    ("בוז'י הוא " + random(prince) + " ו" + random(prince)),
+    ("הכתב שכח לספר על ה" + random(hand) + " ה" + random(pretty) + " של בוז'י"),
+    ("התקשורת השמאלנית אולי לא תגיד לכם אבל בוז'י ה" + random(prince) +  " עומד " + random(action))
+    ]
+    return random(form)
+        }
+    
+return(generate() + random(end) + " " + generate())
+}
+
+
+function Writejoke() { 
+    jokespace.innerText = (generatecomment())
+}
+
+
+    </script>
+    
+</body>
+</html>
