@@ -17,3 +17,4 @@ let btn = document.createElement("button")
 btn.innerHTML =  `End Game`;
 btn.onclick = setScoreandEnd
 document.body.appendChild(btn)
+console.log(3)
