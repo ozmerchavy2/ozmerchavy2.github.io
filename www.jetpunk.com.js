@@ -10,7 +10,7 @@ let i = 0;
         sade.value = countries[i];
         sade.dispatchEvent(new KeyboardEvent("input"));
         i++;
-        setTimeout(guess(), 100);
+        setTimeout(guess(), 200);
     } else {
         i = 0
     }
