@@ -9,7 +9,7 @@ function guess(){
         sade.value = countries[i];
         sade.dispatchEvent(new KeyboardEvent("input"));
         i++;
-        setTimeout(guess, 200);
+        setTimeout(guess, 15);
     } 
 }
 guess()
