@@ -1,9 +1,7 @@
 
 function all() {
     sade = document.querySelector('input[name="stopitchrome"]');
-countries = []
-for (const answer in (_page.data.recommendedTypeins)){
-    countries.push(answer)}
+countries = _page.data.quiz.answers.map(x=> x.display)
 let i = 0
 function guess(){
     
