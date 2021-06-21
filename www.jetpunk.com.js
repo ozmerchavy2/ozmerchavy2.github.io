@@ -16,7 +16,7 @@ function guess(){
         sade.value = answers[i];
         sade.dispatchEvent(new KeyboardEvent("input"));
         i++;
-        setTimeout(guess, 1);
+        setTimeout(guess, 10;
     } 
 }
 guess()
