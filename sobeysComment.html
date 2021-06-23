@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobeys Comment</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 25vh;
+            margin-bottom: 10vh;
+        }
+
+        #jokespace {
+            margin-top: 7vh;
+        }
+
+        
+    </style>
+</head>
+<body>
+<h1>Sobeys Comment Generator</h1>
+<button class="btn btn-success" onclick="Writejoke()">create sobeys feedback</button>
+<br>
+<input type="number" name="length" id="length">How long should it be?</input>
+<p id = "jokespace"></p>
+
+    <script>
+const jokespace = document.getElementById ('jokespace'); 
+const length = document.getElementById("length") 
+function random(array) {
+    return (array[~~(Math.random() * array.length)])
+}
+
+
+function generatecomment(length) {
+    let response = ""
+    let I_liked = ["I liked", "I enjoyed", "I appriciated", "I endorse", "I admired", "I really loved"]
+    let awesome = ["awesome", "great", "fantastic", "fabulous", "fun", "special","dope", "wonderful", "sublime", "devine", "top notch"]
+    let feeling = ["air", "feeling", "tables", "staff", "meatballs section", "chocolate section", "atmosphere", "selection", "vibe", "cleanliness"]
+    let visit = ["visit", "shop at", "go to", "enjoy", "attend", "celebrate", "come to", "see"]
+    let staff = ["staff", "costumers", "cashiers", "staff", "staff", "cleaning team", "staff", "staff", "staff"]
+    let friendy = ["friendly", "helpful", "playful", "nice", "kind"]
+    let very = ["very", "super", "ultra", "absolutely", "very", "very"]
+    let went_to = ["looked for", "searched", "went to","checked", "inquired about", "visited"]
+    let dairy = ["dairy", "meatballs", "organic", "seafood", "produce", "international food", "freezer", "vegtable", "meat", "ice cream", "eggs","pasta","candy","canned","drinks"]
+    let section = ["aisle", "section", "area", "place", "department"]
+    function generateSentance() {
+        let forms = [
+            random(I_liked) + " the " + random(awesome) + " "+  random(feeling) + " of Sobeys. ",
+            "This sobeys is a " +  random(awesome) + " place to " + random(visit)+ ". ", 
+             "The " + random(staff) + " were all " + random(very) + " " + random(friendy)+ ". ",
+             "The " + random(feeling) + " is " + random(very) + " " + random(awesome) + ". ",
+             "When I " + random(went_to) + " the " + random(dairy) + " " + random(section) + ", the " + random(staff) + " were " + random(friendy) + ". "
+        ]
+        return random(forms)
+    }
+    while (response.length < length) {
+        response += generateSentance()
+    }
+    return response
+}
+
+
+function Writejoke() { 
+
+    jokespace.innerText = (generatecomment(length.value))
+}
+
+
+    </script>
+    
+</body>
+</html>
