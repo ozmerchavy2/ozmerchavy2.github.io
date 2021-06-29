@@ -1,1 +1,0 @@
-document.querySelector("#app div div").className = "FuckNYT", document.getElementById("gateway-content").remove(), document.getElementById("site-content").style = "FuckNYT", document.getElementById("top-wrapper").remove(), document.querySelector(".css-1bd8bfl").remove(), alert("NYC HACKED");
